@@ -2,58 +2,86 @@
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "width": 600,
     "height": 550,
-    "data": {
-        "url": "states.geojson", 
-        "format": {
-            "type": "json",
-            "property": "features"
-        }
-    },
-    "transform": [
+    "layer": [
         {
-            "lookup": "properties.STATE_NAME",
-            "from": {
-                "data": {
-                    "values": [
-                        {"Location": "Australian Capital Territory", "Deaths": 207},
-                        {"Location": "Northern Territory", "Deaths": 147},
-                        {"Location": "Tasmania", "Deaths": 553},
-                        {"Location": "Western Australia", "Deaths": 1818},
-                        {"Location": "South Australia", "Deaths": 1523},
-                        {"Location": "Queensland", "Deaths": 4057},
-                        {"Location": "Victoria", "Deaths": 4483},
-                        {"Location": "New South Wales", "Deaths": 5852}
-                    ]
+            "data": {
+                "url": "states.geojson",
+                "format": {
+                    "type": "json",
+                    "property": "features"
+                }
+            },
+            "transform": [
+                {
+                    "lookup": "properties.STATE_NAME",
+                    "from": {
+                        "data": {
+                            "values": [
+                                {"Location": "Australian Capital Territory", "Deaths": 207},
+                                {"Location": "Northern Territory", "Deaths": 147},
+                                {"Location": "Tasmania", "Deaths": 553},
+                                {"Location": "Western Australia", "Deaths": 1818},
+                                {"Location": "South Australia", "Deaths": 1523},
+                                {"Location": "Queensland", "Deaths": 4057},
+                                {"Location": "Victoria", "Deaths": 4483},
+                                {"Location": "New South Wales", "Deaths": 5852}
+                            ]
+                        },
+                        "key": "Location",
+                        "fields": ["Deaths"]
+                    }
+                }
+            ],
+            "projection": {
+                "type": "equalEarth",
+                "center": [135, -25],
+                "scale": 800,
+                "clipExtent": [[0, 0], [600, 550]]
+            },
+            "mark": {
+                "type": "geoshape",
+                "stroke": "black",
+                "strokeWidth": 1
+            },
+            "encoding": {
+                "color": {
+                    "field": "Deaths",
+                    "type": "quantitative",
+                    "scale": {
+                        "domain": [0, 6000],
+                        "range": ["#e0d7f0", "#5c3f8a"]
+                    },
+                    "title": "Amount of Deaths"
                 },
-                "key": "Location",
-                "fields": ["Deaths"]
+                "tooltip": [
+                    {"field": "properties.STATE_NAME", "title": "State"},
+                    {"field": "Deaths", "title": "Deaths"}
+                ]
+            }
+        },
+        {
+            "data": {
+                "url": "ne_110m_graticules.json",
+                "format": {
+                    "type": "json",
+                    "property": "features"
+                }
+            },
+            "mark": {
+                "type": "line",
+                "stroke": "black",
+                "strokeWidth": 1
+            },
+            "encoding": {
+                "longitude": {
+                    "field": "geometry.coordinates[0]",
+                    "type": "quantitative"
+                },
+                "latitude": {
+                    "field": "geometry.coordinates[1]",
+                    "type": "quantitative"
+                }
             }
         }
-    ],
-    "projection": {
-        "type": "equalEarth",
-        "center": [135, -25],
-        "scale": 800,
-        "clipExtent": [[0, 0], [600, 550]]
-    },
-    "mark": {
-        "type": "geoshape",
-        "stroke": "black",
-        "strokeWidth": 1
-    },
-    "encoding": {
-        "color": {
-            "field": "Deaths",
-            "type": "quantitative",
-            "scale": {
-                "domain": [0, 6000],
-                "range": ["#e0d7f0", "#5c3f8a"]
-            },
-            "title": "Deaths from Ischaemic Heart Diseases"
-        },
-        "tooltip": [
-            {"field": "properties.STATE_NAME", "title": "State"},
-            {"field": "Deaths", "title": "Deaths"}
-        ]
-    }
+    ]
 }
