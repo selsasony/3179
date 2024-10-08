@@ -110,7 +110,7 @@
       }
     ],
     "transform": [
-      {"filter": "datum.States == 'Australia' || datum.States == States"},
+      {"filter": "datum.States == 'States' || datum.States == States"},
       {"filter": "datum.Year == Year"}
     ],
     "config": {}
