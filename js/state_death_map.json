@@ -35,7 +35,12 @@
       "color": {
         "field": "Persons",
         "type": "quantitative",
-        "scale": {"scheme": "blues", "domain": [0, 65000]}
+        "scale": {
+            "scheme": "browns",
+            "domain": [0, 65000]
+
+            }
+
       },
       "tooltip": [
         {"field": "properties.name", "type": "nominal", "title": "State"},

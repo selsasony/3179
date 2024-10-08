@@ -3,29 +3,29 @@ body * {
 }
 
 h1 {
-  color: rgb(0, 0, 0); /* Existing color */
-  font-weight: bold; /* Make the font bold */
-  font-size: 3em; /* Increase the font size */
-  font-family: 'Mulish', sans-serif; /* Ensure correct font family */
-  text-align: center; /* Center the text */
-  margin-top: 60px; /* Adjust top margin */
-  margin-bottom: 60px; /* Adjust bottom margin */
+  color: rgb(0, 0, 0); 
+  font-weight: bold; 
+  font-size: 3em; 
+  font-family: 'Mulish', sans-serif; 
+  text-align: center;
+  margin-top: 60px;
+  margin-bottom: 60px; 
   
 }
 
 h2 {
-  font-weight: 700; /* Consistent weight for subheadings */
-  color: rgb(0, 0, 0); /* Consistent color for all headings */
-  margin-top: 20px; /* Uniform top margin */
+  font-weight: 700; 
+  color: rgb(0, 0, 0);
+  margin-top: 20px; 
 }
 
 body {
-  background-color: #4E6B4A; 
+  background-color: #4f2525; 
   margin: 0; 
 }
 
 .container {
-  border: 70px solid #4E6B4A; 
+  border: 70px solid #4f2525; 
   border-radius: 100px; 
   padding: 20px; 
   background-color: #F5E9D9; 
@@ -34,7 +34,7 @@ body {
 
 
 .main_divider {
-  background-color: #4E6B4A;
+  background-color: #4f2525;
   width: 100%;
   padding: 10px; 
 }
@@ -47,7 +47,7 @@ body {
 .sub_divider {
   background-color: rgb(0, 0, 0);
   width: 100%;
-  padding: 20px; /* Added padding for better spacing */
+  padding: 20px; 
 }
 
 .sub_divider h1 {
@@ -59,7 +59,7 @@ body {
 .main_bottom {
   background-color: rgb(0, 0, 0);
   width: 100%;
-  padding: 20px; /* Added padding for better spacing */
+  padding: 20px; 
 }
 
 .vis-container {
@@ -92,7 +92,7 @@ body {
 }
 
 .pure-g {
-  margin: 10px; /* Simplified margins */
+  margin: 10px; 
 }
 
 .small-font {
@@ -101,6 +101,6 @@ body {
 
 .vis-container {
   width: 100%;
-  height: 400px; /* Consistent height for all charts */
-  margin-bottom: 20px; /* Space between charts */
+  height: 400px; 
+  margin-bottom: 20px; 
 }

@@ -3,7 +3,7 @@
     "data": {
       "url": "https://raw.githubusercontent.com/selsasony/3179/refs/heads/main/data/external_causes.csv"
     },
-    "width": 920,
+    "width": 720,
     "height": 600,
     "background": "#F5E9D9",
     "encoding": {"x": {"field": "Year", "type": "ordinal"}},

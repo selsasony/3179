@@ -28,9 +28,15 @@
             "Other specified diabetes mellitus",
             "Unspecified diabetes mellitus"
           ],
-          "range": ["#7E74A4", "#F2C381", "#EFC7D3", "#BBAD6D"]
+          "range": [
+            "#D05429",
+            "#A15A30",
+            "#6C3B24",
+            "#CFAF87",
+            "#4E2A12"
+            ]
         },
-        "legend": {"title": "Type of Ischaemic Heart Disease", "labelLimit": 200}
+        "legend": {"title": "Type of Diabetes", "labelLimit": 200}
       },
       "opacity": {"condition": {"param": "Type", "value": 0.75}, "value": 0.2},
       "tooltip": [

@@ -1,7 +1,7 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "height": 500,
-    "width": 1000,
+    "height": 550,
+    "width": 600,
     "background": "#F5E9D9",
     "data": {
       "url": "https://raw.githubusercontent.com/selsasony/3179/refs/heads/main/data/donut_chart_states.csv"
@@ -21,7 +21,7 @@
       "color": {
         "field": "Areas of Malignant Neoplasms",
         "type": "nominal",
-        "legend": {"orient": "right", "labelLimit": 300},
+        "legend": {"orient": "left", "labelLimit": 300},
         "scale": {
           "domain": [
             "Oesophagus",
@@ -38,19 +38,20 @@
             "Other Digestive Organs"
           ],
           "range": [
-            "#F2C381",
-            "#EFC7D3",
-            "#BBAD6D",
-            "#B86986",
-            "#7A7270",
-            "#D7B7D3",
-            "#97B9B6",
-            "#C5C1EC",
-            "#C4BFBE",
-            "#B1968A",
-            "#7E74A4",
-            "#E79CB5"
-          ]
+            "#D9A47A",  
+            "#B26D45",  
+            "#C97C5D",  
+            "#A6856A",  
+            "#E2B266",  
+            "#B77F80",  
+            "#D4A15C", 
+            "#927B6B",  
+            "#C98A74", 
+            "#A67F5F",  
+            "#E3A484", 
+            "#BF9B6D"  
+        ]
+
         }
       },
       "tooltip": [
