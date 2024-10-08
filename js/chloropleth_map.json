@@ -1,0 +1,91 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json", 
+     "title": "My Map", 
+     "width": 800, 
+     "height": 400, 
+     "projection": {"type": "mercator"},
+     "data": {
+         "url": "https://raw.githubusercontent.com/selsasony/3179/refs/heads/main/data/ste_map_data.json",
+         "format": {
+             "type": "topojson", 
+             "feature": "ste_map_data"
+         }
+     },
+     "encoding": {
+         "tooltip": [
+             {
+                 "field": "properties.STE_NAME16", 
+                 "type": "nominal", 
+                 "title": "State Name"
+             }, 
+             {
+                 "field": "Total_Value", 
+                 "type": "quantitative", 
+                 "title": "Value (in Millions of Dollars)"
+             }
+         ]
+     }, 
+     "layer": [
+         {
+             "mark": {
+                 "type": "geoshape", 
+                 "fill": "gainsboro", 
+                 "stroke": "white"
+             }
+         }, 
+         {
+             "transform": [
+                 {
+                     "lookup": "properties.STE_NAME16", 
+                     "from":{
+                         "data": {
+                             "url":  "https://raw.githubusercontent.com/archnj/FIT3179/main/dataVis2/data_folder/cropAndLivestock.csv"
+                         },
+                         "key": "State", 
+                         "fields": [
+                             "Total_Value"
+                         ]
+                     }
+                 }
+             ], 
+             "mark": {
+                 "type": "geoshape"
+             },
+             "encoding": {
+                 "color": {
+                     "field": "Total_Value",
+                     "type": "quantitative", 
+                     "title": [
+                         "Value (in Millions of Dollars)"
+                     ], 
+                     "scale": {
+                         "type" :"threshold", 
+                         "domain": [2500, 5000, 7500, 10000], 
+                         "range": ["#c6dbef","#9ecae1","#6baed6","#4292c6","#2171b5"]
+                     }, 
+                     "legend": {
+                         "orient": "bottom"
+                     }
+                 }
+             }
+         }
+     ], 
+     "config": {
+         "view": {
+             "stroke": null
+         }, 
+         "axis": {
+             "labelFont": "Oxygen", 
+             "titleFont": "Oxygen"
+         }, 
+         "legend": {
+             "labelFont": "Oxygen",
+             "titleFont": "Oxygen"
+         }, 
+         "title": {
+             "font": "Oxygen",
+             "fontSize": 16,
+             "fontWeight": 600
+         }
+     }
+ }
