@@ -2,7 +2,7 @@
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "width": 1000,
     "height": 600,
-    "background": "#FAF8F5",
+    "background": "#F5E9D9",
     "data": {
       "url": "https://raw.githubusercontent.com/selsasony/3179/refs/heads/main/data/stacked_bar_chart.csv"
     },
@@ -76,6 +76,10 @@
         "value": 0
       }
     },
-    "config": {}
+    "config": {
+        "view": {
+        "stroke": null  
+    }
   }
+}
   

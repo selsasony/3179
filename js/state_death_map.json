@@ -1,7 +1,8 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "width": 800,
-    "height": 800,
+    "width": 600,
+    "height": 600,
+    "background": "#F5E9D9",
     "projection": {"type": "mercator"},
     "data": {
       "url": "https://raw.githubusercontent.com/selsasony/3179/refs/heads/main/data/ne_10m.json",
@@ -34,7 +35,7 @@
       "color": {
         "field": "Persons",
         "type": "quantitative",
-        "scale": {"scheme": "reds", "domain": [0, 65000]}
+        "scale": {"scheme": "blues", "domain": [0, 65000]}
       },
       "tooltip": [
         {"field": "properties.name", "type": "nominal", "title": "State"},
@@ -45,6 +46,11 @@
         }
       ]
     },
-    "config": {}
+    "config": {
+        "view": {
+        "stroke": null  
+    }
   }
+
+}
   

@@ -1,9 +1,8 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "height": 600,
+    "height": 500,
     "width": 1000,
-    "background": "#FAF8F5",
-    "title": "Deaths Caused by Malignant Neoplasms of Digestive Organs (2012-2022)",
+    "background": "#F5E9D9",
     "data": {
       "url": "https://raw.githubusercontent.com/selsasony/3179/refs/heads/main/data/donut_chart_states.csv"
     },
@@ -20,7 +19,7 @@
         "stack": true
       },
       "color": {
-        "field": "Malignant Neoplasm of",
+        "field": "Areas of Malignant Neoplasms",
         "type": "nominal",
         "legend": {"orient": "right", "labelLimit": 300},
         "scale": {
@@ -55,7 +54,7 @@
         }
       },
       "tooltip": [
-        {"field": "Malignant Neoplasm of", "type": "nominal"},
+        {"field": "Areas of Malignant Neoplasms", "type": "nominal"},
         {"field": "Number of Deaths", "type": "quantitative", "format": ","},
         {"field": "Year", "type": "ordinal"},
         {"field": "States", "type": "nominal"}
@@ -113,5 +112,9 @@
       {"filter": "datum.States == 'States' || datum.States == States"},
       {"filter": "datum.Year == Year"}
     ],
-    "config": {}
+    "config": {
+        "view": {
+        "stroke": null  
+    }
   }
+}

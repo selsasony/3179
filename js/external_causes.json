@@ -5,7 +5,7 @@
     },
     "width": 920,
     "height": 600,
-    "background": "#FAF8F5",
+    "background": "#F5E9D9",
     "encoding": {"x": {"field": "Year", "type": "ordinal"}},
     "layer": [
       {
@@ -54,6 +54,10 @@
         ]
       }
     ],
-    "config": {}
+    "config": {
+        "view": {
+        "stroke": null  
+    }
   }
+}
 
