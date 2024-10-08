@@ -3,7 +3,7 @@
     "height": 600,
     "width": 1000,
     "background": "#FAF8F5",
-    "title": "Deaths Caused by Malignant Neoplasms of Digestive Organs (C15-C26) (2011-2020)",
+    "title": "Deaths Caused by Malignant Neoplasms of Digestive Organs (2012-2022)",
     "data": {
       "url": "https://raw.githubusercontent.com/selsasony/3179/refs/heads/main/data/donut_chart_states.csv"
     },
@@ -34,7 +34,7 @@
             "Anus and Anal Canal",
             "Liver and Intrahepatic Bile Ducts",
             "Gallbladder",
-            "Other and Unspecified Parts of Biliary Tract (C24)",
+            "Other and Unspecified Parts of Biliary Tract",
             "Pancreas",
             "Other Digestive Organs"
           ],
@@ -99,11 +99,11 @@
       },
       {
         "name": "Year",
-        "value": 2011,
+        "value": 2012,
         "bind": {
           "input": "range",
-          "min": 2011,
-          "max": 2020,
+          "min": 2012,
+          "max": 2022,
           "step": 1,
           "name": "Year: "
         }
