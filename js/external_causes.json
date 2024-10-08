@@ -1,0 +1,88 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "data": {
+      "url": "https://raw.githubusercontent.com/selsasony/3179/main/data/external_causes.csv",
+      "format": {
+        "type": "csv",
+        "parse": {
+          "Deaths": "number"
+        }
+      }
+    },
+    "width": 920,
+    "height": 600,
+    "background": "#FAF8F5",
+    "encoding": {
+      "x": {
+        "field": "Year",
+        "type": "ordinal"
+      }
+    },
+    "layer": [
+      {
+        "encoding": {
+          "color": {
+            "field": "Cause",
+            "type": "nominal"
+          },
+          "y": {
+            "field": "Deaths",
+            "type": "quantitative"
+          }
+        },
+        "layer": [
+          {
+            "mark": "line"
+          },
+          {
+            "transform": [
+              {
+                "filter": {
+                  "param": "hover",
+                  "empty": false
+                }
+              }
+            ],
+            "mark": "point"
+          }
+        ]
+      },
+      {
+        "mark": "rule",
+        "encoding": {
+          "opacity": {
+            "condition": {
+              "value": 0.3,
+              "param": "hover",
+              "empty": false
+            },
+            "value": 0
+          },
+          "tooltip": [
+            {"field": "Falls", "type": "quantitative"},
+            {"field": "Intentional Self-harm", "type": "quantitative"},
+            {"field": "Noxious Substances Poisoning", "type": "quantitative"},
+            {"field": "Transport Accidents", "type": "quantitative"},
+            {"field": "Undetermined Intent", "type": "quantitative"},
+            {"field": "Assault", "type": "quantitative"},
+            {"field": "Accidental Drowning", "type": "quantitative"},
+            {"field": "Threats to Breathing", "type": "quantitative"}
+          ]
+        },
+        "params": [
+          {
+            "name": "hover",
+            "select": {
+              "type": "point",
+              "fields": ["Year"],
+              "nearest": true,
+              "on": "mouseover",
+              "clear": "mouseout"
+            }
+          }
+        ]
+      }
+    ],
+    "config": {}
+  }
+  
