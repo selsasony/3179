@@ -1,0 +1,81 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": 1000,
+    "height": 600,
+    "background": "#FAF8F5",
+    "data": {
+      "url": "https://raw.githubusercontent.com/selsasony/3179/refs/heads/main/data/stacked_bar_chart.csv"
+    },
+    "params": [
+      {"name": "highlight", "select": {"type": "point", "on": "mouseover"}},
+      {"name": "select", "select": "point"}
+    ],
+    "mark": {
+      "type": "bar",
+      "stroke": "black",
+      "cursor": "pointer"
+    },
+    "encoding": {
+      "x": {
+        "field": "State",
+        "type": "nominal",
+        "title": "State"
+      },
+      "y": {
+        "field": "Total",
+        "type": "quantitative",
+        "title": "Total Deaths"
+      },
+      "color": {
+        "field": "Age Group",
+        "type": "nominal",
+        "title": "Age Group",
+        "scale": {
+          "domain": [
+            "Under 1 year",
+            "1-14 years",
+            "15-24 years",
+            "25-34 years",
+            "35-44 years",
+            "45-54 years",
+            "55-64 years",
+            "65-74 years",
+            "75-84 years",
+            "85-94 years",
+            "95 years and over"
+          ],
+          "range": [
+            "#F2C381",
+            "#EFC7D3",
+            "#B86986",
+            "#7A7270",
+            "#97B9B6",
+            "#E79CB5",
+            "#C5C1EC",
+            "#C4BFBE",
+            "#B1968A",
+            "#7A8E99",
+            "#B0A9C5"
+          ]
+        }
+      },
+      "tooltip": [
+        {"field": "State", "type": "nominal", "title": "State"},
+        {"field": "Age Group", "type": "nominal", "title": "Age Group"},
+        {"field": "Total", "type": "quantitative", "title": "Total Deaths"}
+      ],
+      "fillOpacity": {
+        "condition": {"param": "select", "value": 1},
+        "value": 0.3
+      },
+      "strokeWidth": {
+        "condition": [
+          {"param": "select", "empty": false, "value": 2},
+          {"param": "highlight", "empty": false, "value": 1}
+        ],
+        "value": 0
+      }
+    },
+    "config": {}
+  }
+  
