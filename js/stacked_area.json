@@ -1,0 +1,71 @@
+{
+    "height": 600,
+    "width": 600,
+    "background": "#FAF8F5",
+    "data": {
+      "url": "https://raw.githubusercontent.com/selsasony/3179/refs/heads/main/data/stacked_area.csv"
+    },
+    "mark": {"type": "area", "cursor": "pointer", "line": {"strokeWidth": 0}},
+    "encoding": {
+      "x": {
+        "timeUnit": "year",
+        "field": "Year",
+        "title": "Year",
+        "axis": {"domain": false}
+      },
+      "y": {
+        "aggregate": "sum",
+        "field": "Number of Deaths",
+        "title": "Number of Deaths"
+      },
+      "color": {
+        "field": "Type",
+        "scale": {
+          "domain": [
+            "Insulin-dependent diabetes mellitus",
+            "Non-insulin-dependent diabetes mellitus",
+            "Malnutrition-related diabetes mellitus",
+            "Other specified diabetes mellitus)",
+            "Unspecified diabetes mellitus"
+          ],
+          "range": ["#7E74A4", "#F2C381", "#EFC7D3", "#BBAD6D"]
+        },
+        "legend": {"title": "Type of Diabetes", "labelLimit": 200}
+      },
+      "opacity": {"condition": {"param": "Type", "value": 0.75}, "value": 0.2},
+      "tooltip": [
+        {"field": "Type", "type": "nominal"},
+        {"field": "Number of Deaths", "type": "quantitative", "format": ","},
+        {"field": "Year", "type": "ordinal", "timeUnit": "year", "title": "Year"},
+        {"field": "States", "type": "nominal"}
+      ]
+    },
+    "params": [
+      {
+        "name": "State",
+        "value": "Australia",
+        "bind": {
+          "input": "select",
+          "options": [
+            "Australia",
+            "New South Wales",
+            "Victoria",
+            "Queensland",
+            "South Australia",
+            "Western Australia",
+            "Tasmania",
+            "Northern Territory",
+            "Australian Capital Territory"
+          ],
+          "name": "States Selection: "
+        }
+      },
+      {
+        "name": "Type",
+        "select": {"type": "point", "fields": ["Type"]},
+        "bind": "legend"
+      }
+    ],
+    "transform": [{"filter": "datum.State == State"}],
+    "config": {}
+  }
