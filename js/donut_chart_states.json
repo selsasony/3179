@@ -1,0 +1,117 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "height": 600,
+    "width": 1000,
+    "background": "#FAF8F5",
+    "title": "Deaths Caused by Malignant Neoplasms of Digestive Organs (C15-C26) (2011-2020)",
+    "data": {
+      "url": "https://raw.githubusercontent.com/selsasony/3179/refs/heads/main/data/donut_chart_states.csv"
+    },
+    "mark": {
+      "type": "arc",
+      "innerRadius": 150,
+      "stroke": "white",
+      "cursor": "pointer"
+    },
+    "encoding": {
+      "theta": {
+        "field": "Number of Deaths",
+        "type": "quantitative",
+        "stack": true
+      },
+      "color": {
+        "field": "Malignant Neoplasm of",
+        "type": "nominal",
+        "legend": {"orient": "right", "labelLimit": 300},
+        "scale": {
+          "domain": [
+            "Oesophagus",
+            "Stomach",
+            "Small Intestine",
+            "Colon",
+            "Rectosigmoid Junction",
+            "Rectum",
+            "Anus and Anal Canal",
+            "Liver and Intrahepatic Bile Ducts",
+            "Gallbladder",
+            "Other and Unspecified Parts of Biliary Tract (C24)",
+            "Pancreas",
+            "Other Digestive Organs"
+          ],
+          "range": [
+            "#F2C381",
+            "#EFC7D3",
+            "#BBAD6D",
+            "#B86986",
+            "#7A7270",
+            "#D7B7D3",
+            "#97B9B6",
+            "#C5C1EC",
+            "#C4BFBE",
+            "#B1968A",
+            "#7E74A4",
+            "#E79CB5"
+          ]
+        }
+      },
+      "tooltip": [
+        {"field": "Malignant Neoplasm of", "type": "nominal"},
+        {"field": "Number of Deaths", "type": "quantitative", "format": ","},
+        {"field": "Year", "type": "ordinal"},
+        {"field": "States", "type": "nominal"}
+      ],
+      "order": {
+        "field": "Number of Deaths",
+        "type": "quantitative",
+        "sort": "descending"
+      }
+    },
+    "params": [
+      {
+        "name": "States",
+        "value": "Australia",
+        "bind": {
+          "input": "select",
+          "options": [
+            "Australia",
+            "New South Wales",
+            "Victoria",
+            "Queensland",
+            "South Australia",
+            "Western Australia",
+            "Tasmania",
+            "Northern Territory",
+            "Australian Capital Territory"
+          ],
+          "labels": [
+            "Australia",
+            "New South Wales",
+            "Victoria",
+            "Queensland",
+            "South Australia",
+            "Western Australia",
+            "Tasmania",
+            "Northern Territory",
+            "Australian Capital Territory"
+          ],
+          "name": "States Selection: "
+        }
+      },
+      {
+        "name": "Year",
+        "value": 2011,
+        "bind": {
+          "input": "range",
+          "min": 2011,
+          "max": 2020,
+          "step": 1,
+          "name": "Year: "
+        }
+      }
+    ],
+    "transform": [
+      {"filter": "datum.States == 'Australia' || datum.States == States"},
+      {"filter": "datum.Year == Year"}
+    ],
+    "config": {}
+  }
