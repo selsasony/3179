@@ -1,61 +1,32 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "data": {
-      "url": "https://raw.githubusercontent.com/selsasony/3179/main/data/external_causes.csv",
-      "format": {
-        "type": "csv",
-        "parse": {
-          "Deaths": "number"
-        }
-      }
+      "url": "https://raw.githubusercontent.com/selsasony/3179/refs/heads/main/data/external_causes.csv"
     },
     "width": 920,
     "height": 600,
     "background": "#FAF8F5",
-    "encoding": {
-      "x": {
-        "field": "Year",
-        "type": "ordinal"
-      }
-    },
+    "encoding": {"x": {"field": "Year", "type": "ordinal"}},
     "layer": [
       {
         "encoding": {
-          "color": {
-            "field": "Cause",
-            "type": "nominal"
-          },
-          "y": {
-            "field": "Deaths",
-            "type": "quantitative"
-          }
+          "color": {"field": "Cause", "type": "nominal"},
+          "y": {"field": "Deaths", "type": "quantitative"}
         },
         "layer": [
+          {"mark": "line"},
           {
-            "mark": "line"
-          },
-          {
-            "transform": [
-              {
-                "filter": {
-                  "param": "hover",
-                  "empty": false
-                }
-              }
-            ],
+            "transform": [{"filter": {"param": "hover", "empty": false}}],
             "mark": "point"
           }
         ]
       },
       {
+        "transform": [{"pivot": "Cause", "value": "Deaths", "groupby": ["Year"]}],
         "mark": "rule",
         "encoding": {
           "opacity": {
-            "condition": {
-              "value": 0.3,
-              "param": "hover",
-              "empty": false
-            },
+            "condition": {"value": 0.3, "param": "hover", "empty": false},
             "value": 0
           },
           "tooltip": [
@@ -85,4 +56,4 @@
     ],
     "config": {}
   }
-  
+
