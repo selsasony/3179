@@ -78,6 +78,13 @@
 
     <div class="pure-g">
       <div class="pure-u-1">
+        <h2>Proportion of Deaths by Dementia</h2>
+        <div id="waffle_chart" class="vis-container"></div>
+      </div>
+    </div>
+
+    <div class="pure-g">
+      <div class="pure-u-1">
         <h2> Prevalence of Morbidity in Different Age Groups Across States </h2>
         <div id="stacked_bar_hover" class="vis-container"></div>
       </div>
@@ -120,6 +127,12 @@
     vegaEmbed('#state_death_map', specVis5).then(function (result) {
       // Access the Vega view instance as result.view
     }).catch(console.error);
+
+    var specVis6 = "js/waffle_chart.json";
+    vegaEmbed('#waffle_chart', specVis6).then(function (result) {
+      // Access the Vega view instance as result.view
+    }).catch(console.error);
+
   </script>
 </body>
 
