@@ -25,8 +25,8 @@ body {
 }
 
 .container {
-  border: 70px solid #4f2525; 
-  border-radius: 100px; 
+  border: 150px solid #4f2525; 
+  border-radius: 200px; 
   padding: 20px; 
   background-color: #F5E9D9; 
   margin: 20px; 
@@ -104,3 +104,5 @@ body {
   height: 400px; 
   margin-bottom: 20px; 
 }
+
+

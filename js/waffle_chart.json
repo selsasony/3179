@@ -19,7 +19,7 @@
         "field": "Deaths",
         "scale": {
             "domain": ["Female", "Male"],
-            "range": ["#4f2525", "#FFE194"]
+            "range": ["#D7A6B9", "#A4B6C1"]
         },
         "legend": null
       },
