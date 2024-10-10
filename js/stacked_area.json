@@ -1,7 +1,8 @@
 {
-    "height": 500,
+    "height": 400,
     "width": 500,
     "background": "#F5E9D9",
+    "title": "Deaths Caused by Diabetes",
     "data": {
       "url": "https://raw.githubusercontent.com/selsasony/3179/refs/heads/main/data/stacked_area.csv"
     },
@@ -36,7 +37,7 @@
             "#4E2A12"
             ]
         },
-        "legend": {"title": "Type of Diabetes", "labelLimit": 200,"orient":"left","labelFontSize": 12, "titleFontSize": 12 }
+        "legend": null
       },
       "opacity": {"condition": {"param": "Type", "value": 0.75}, "value": 0.2},
       "tooltip": [

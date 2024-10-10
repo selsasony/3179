@@ -1,8 +1,9 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "height": 500,
-    "width": 500,
+    "height": 400,
+    "width": 400,
     "background": "#F5E9D9",
+    "title": "Deaths Caused by Illness",
     "data": {
       "url": "https://raw.githubusercontent.com/selsasony/3179/refs/heads/main/data/bar_chart_dataset.csv"
     },
@@ -48,11 +49,11 @@
                 "Diseases of the Respiratory System"
               ],
               "range": [
-                "#DE8156",
-                "#F2C381",
-                "#F2C381",
-                "#F2C381",
-                "#F2C381"
+                "#DE7050",
+                "#B86B6B",
+                "#4B7043",
+                "#4F6D7A",
+                "#C94C4C"
               ]
             }
           },

@@ -1,8 +1,9 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "width": 940,
-  "height": 500,
+  "width": 780,
+  "height": 450,
   "background": "#F5E9D9",
+  "title":"Prevalence of Morbidity in Different Age Groups across Australia",
   "data": {
     "url": "https://raw.githubusercontent.com/selsasony/3179/refs/heads/main/data/stacked_bar_chart.csv"
   },

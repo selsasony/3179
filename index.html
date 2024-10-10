@@ -23,17 +23,17 @@
 
   <style>
     .text-below-map {
-      margin-top: 120px; 
+      margin-top: 140px; 
     }
 
     .text-next-to-donut {
-      padding-top: 150px; 
+      padding-top: 70px; 
     }
 
     .text-next-to-area {
-      padding-top: 250px; 
-      width: 50%; 
-      margin-left: 300px; 
+      padding-top: 50px; 
+      width: 80%; 
+      margin-left: 100px; 
     }
 
     .filter-container {
@@ -43,13 +43,13 @@
     }
 
     .waffle-charts-container {
-      display: flex; /* Use flexbox for horizontal layout */
-      justify-content: space-around; /* Space the charts evenly */
-      margin-top: 20px; /* Add some space above the charts */
+      display: flex; 
+      justify-content: space-around; 
+      margin-top: 20px;
     }
 
     .waffle-chart {
-      width: 30%; /* Set a width for each chart to fit three in one row */
+      width: 30%;
     }
   </style>
 </head>
@@ -68,72 +68,95 @@
     </div>
 
     <div class="pure-g">
-      <div class="pure-u-1" style="text-align: left;">
-        <h2>Deaths by State (2022)</h2>
+      <div class="pure-u-1" style="text-align: center;">
+        <h2>The Geography of Mortality</h2>
         <div id="state_death_map" class="vis-container" style="margin: 0 auto; display: block; text-align: center;"></div>
         <p class="text-below-map" style="text-align: center;">The map highlights the number of deaths across Australian states in 2022. The states with darker shades represent higher mortality rates, reflecting differences in population and healthcare challenges.</p>
       </div>
     </div>    
 
     <div class="pure-g">
-      <div class="pure-u-1">
-        <h2>Deaths Caused by External Factors</h2>
-        <div id="multiple_series_line_chart" class="vis-container"></div>
+      <div class="pure-u-1" style="text-align: center;">
+        <h2>The External Forces behind Life and Death</h2>
       </div>
     </div>
+    <div class="pure-g">
+      <div class="pure-u-1" style="text-align: left;">
+        <div id="multiple_series_line_chart" class="vis-container" style="margin-left: 0; display: block;"></div>
+      </div>
+    </div>
+    
 
     <div class="pure-g">
-      <div class="pure-u-1">
-        <h2>Deaths Caused by Illness</h2>
+      <div class="pure-u-1" style="text-align: center;">
+        <h2 style="margin-top: 50px;">The Hidden Toll of Illness</h2>
+      </div>
+    </div>
+    <div class="pure-g">
+      <div class="pure-u-1" style="text-align: right;">
         <div id="bar_chart" class="vis-container"></div>
       </div>
     </div>
+    
 
     <div class="pure-g">
-      <div class="pure-u-1" style="text-align: left;">
-        <h2>Deaths Caused by Malignant Neoplasms of Digestive Organs (2012-2022)</h2>
-        <div id="donut_chart" class="vis-container" style="margin: 0 auto; display: flex; justify-content: center;"></div>
+      <div class="pure-u-1" style="text-align: center;">
+        <h2 style="margin-top: 50px;">A Closer Look at Digestive Cancers</h2>
       </div>
-      <div class="pure-u-1">
-        <p class="text-next-to-donut" style="text-align: centre;">The donut chart breaks down the number of deaths caused by various forms of malignant neoplasms in the digestive organs from 2012 to 2022. The data is filtered by year and state, providing insights into the deadliest cancers in this category.</p>
+    </div>
+    <div class="pure-g">
+      <div class="pure-u-1" style="text-align: left;">
+        <div id="donut_chart" class="vis-container" style="margin-left: 0; display: block;"></div>
       </div>
     </div>
     
-    <div class="pure-u-1">
-      <h2>Proportion of Deaths by Different Causes</h2>
+    <div class="pure-g">
+      <div class="pure-u-1">
+        <p class="text-next-to-donut" style="text-align: center;">The donut chart breaks down the number of deaths caused by various forms of malignant neoplasms in the digestive organs from 2012 to 2022. The data is filtered by year and state, providing insights into the deadliest cancers in this category.</p>
+      </div>
+    </div>
+    
+    
+    <div class="pure-u-1" style="text-align: center;">
+      <h2>Through the Gendered Lens of Mortality </h2>
       <div class="waffle-charts-container" style="display: flex; justify-content: space-between; align-items: flex-start;">
         <div class="waffle-chart" style="text-align: center;">
           <div id="waffle_chart"></div>
-          <p style="font-weight: bold;">Dementia</p> <!-- Title for the Dementia chart -->
+          <p style="font-weight: bold;">Dementia</p>
         </div>
         <div class="waffle-chart" style="text-align: center;">
           <div id="waffle_chart2"></div>
-          <p style="font-weight: bold;">Heart Disease</p> <!-- Title for the Heart Disease chart -->
+          <p style="font-weight: bold;">Heart Disease</p> 
         </div>
         <div class="waffle-chart" style="text-align: center;">
           <div id="waffle_chart3"></div>
-          <p style="font-weight: bold;">Hypertensive Diseases</p> <!-- Title for the Hypertensive Diseases chart -->
+          <p style="font-weight: bold;">Hypertensive Diseases</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="pure-g">
+      <div class="pure-u-1" style="text-align: center;">
+        <h2>Unveiling Diabetes as a Silent Killer</h2>
+      </div>
+    </div>
+    <div class="pure-g">
+      <div class="pure-u-1" style="display: flex; align-items: flex-start;">
+        <div style="width: 50%; text-align: left;">
+          <div id="stacked_area_chart" class="vis-container"></div>
+        </div>
+        <div style="width: 50%;">
+          <p class="text-next-to-area">The area chart shows the prevalence of deaths caused by diabetes over the years. 
+            By comparing states and time frames, the chart reveals trends in diabetes-related fatalities and regional disparities in health outcomes.</p>
         </div>
       </div>
     </div>
     
-    
 
     <div class="pure-g">
-      <div class="pure-u-1">
-        <h2> Prevalence of Morbidity in Different Age Groups Across States </h2>
+      <div class="pure-u-1" style="text-align: center;">
+        <h2> Morbidity Across Generations in Aging Australia </h2>
         <div id="stacked_bar_hover" class="vis-container"></div>
-      </div>
-    </div>
-
-    <div class="pure-g">
-      <div class="pure-u-1-2">
-        <h2>Deaths Caused by Diabetes</h2>
-        <div id="stacked_area_chart" class="vis-container"></div>
-      </div>
-      <div class="pure-u-1-2">
-        <p class="text-next-to-area">The area chart shows the prevalence of deaths caused by diabetes over the years. 
-          By comparing states and time frames, the chart reveals trends in diabetes-related fatalities and regional disparities in health outcomes.</p>
       </div>
     </div>
   </div>
@@ -141,47 +164,38 @@
   <script type="text/javascript">
     var specVis1 = "js/external_causes.json";
     vegaEmbed('#multiple_series_line_chart', specVis1).then(function (result) {
-      // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
     }).catch(console.error);
 
     var specVis2 = "js/stacked_bar_chart.json";
     vegaEmbed('#stacked_bar_hover', specVis2).then(function (result) {
-      // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
     }).catch(console.error);
 
     var specVis3 = "js/donut_chart_states.json";
     vegaEmbed('#donut_chart', specVis3).then(function (result) {
-      // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
     }).catch(console.error);
 
     var specVis4 = "js/stacked_area.json";
     vegaEmbed('#stacked_area_chart', specVis4).then(function (result) {
-      // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
     }).catch(console.error);
 
     var specVis5 = "js/state_death_map.json";
     vegaEmbed('#state_death_map', specVis5).then(function (result) {
-      // Access the Vega view instance as result.view
     }).catch(console.error);
 
     var specVis6 = "js/waffle_chart.json";
     vegaEmbed('#waffle_chart', specVis6).then(function (result) {
-      // Access the Vega view instance as result.view
     }).catch(console.error);
 
     var specVis7 = "js/waffle_chart2.json";
     vegaEmbed('#waffle_chart2', specVis7).then(function (result) {
-      // Access the Vega view instance as result.view
     }).catch(console.error);
 
     var specVis8 = "js/waffle_chart3.json";
     vegaEmbed('#waffle_chart3', specVis8).then(function (result) {
-      // Access the Vega view instance as result.view
     }).catch(console.error);
 
     var specVis9 = "js/bar_chart.json";
     vegaEmbed('#bar_chart', specVis9).then(function (result) {
-      // Access the Vega view instance as result.view
     }).catch(console.error);
   </script>
 </body>

@@ -8,16 +8,24 @@ h1 {
   font-size: 3em; 
   font-family: 'Mulish', sans-serif; 
   text-align: center;
-  margin-top: 60px;
-  margin-bottom: 60px; 
-  
+  margin-top: 30px;
+  margin-bottom: 30px; 
+  border: 4px solid rgb(0, 0, 0); 
+  background-color: #e6be8b; 
+  padding: 10px; 
+  border-radius: 7px; 
 }
 
 h2 {
   font-weight: 700; 
   color: rgb(0, 0, 0);
   margin-top: 20px; 
+  border: 2px solid rgb(0, 0, 0); 
+  background-color: #f5d0c0; 
+  padding: 5px;
+  border-radius: 7px;
 }
+
 
 body {
   background-color: #4f2525; 
@@ -25,11 +33,11 @@ body {
 }
 
 .container {
-  border: 150px solid #4f2525; 
-  border-radius: 200px; 
+  border-left: 250px solid #4f2525;
+  border-right: 250px solid #4f2525;
   padding: 20px; 
   background-color: #F5E9D9; 
-  margin: 20px; 
+  margin: 0;  
 }
 
 

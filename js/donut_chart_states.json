@@ -1,14 +1,20 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "height": 500,
-    "width": 500,
+    "height": 400,
+    "width": 400,
     "background": "#F5E9D9",
+    "title": {
+        "text": "Deaths Caused by Malignant Neoplasms of Digestive Organs (2012-2022)",
+        "fontSize": 16,
+        "anchor": "middle",
+        "offset": 20
+      }, 
     "data": {
       "url": "https://raw.githubusercontent.com/selsasony/3179/refs/heads/main/data/donut_chart_states.csv"
     },
     "mark": {
       "type": "arc",
-      "innerRadius": 130,
+      "innerRadius": 110,
       "stroke": "white",
       "cursor": "pointer"
     },

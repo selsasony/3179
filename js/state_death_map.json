@@ -3,6 +3,7 @@
     "width": 500,
     "height": 500,
     "background": "#F5E9D9",
+    "title":"Total Deaths Across Australia (2022)",
     "projection": {"type": "mercator"},
     "data": {
       "url": "https://raw.githubusercontent.com/selsasony/3179/refs/heads/main/data/ne_10m.json",

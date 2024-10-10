@@ -1,7 +1,7 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "config": {"view": {"stroke": ""}},
-    "width": 300,
+    "width": 250,
     "height": 250,
     "background": "#F5E9D9",
     "data": {
@@ -23,7 +23,7 @@
         },
         "legend": null
       },
-      "size": {"value": 5000},
+      "size": {"value": 4000},
       "tooltip": [
       {"field": "Cause", "title": "Cause of Death"},
       {"field": "Deaths", "title": "Gender"}
