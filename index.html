@@ -42,6 +42,15 @@
       float: right; 
     }
 
+    .waffle-charts-container {
+      display: flex; /* Use flexbox for horizontal layout */
+      justify-content: space-around; /* Space the charts evenly */
+      margin-top: 20px; /* Add some space above the charts */
+    }
+
+    .waffle-chart {
+      width: 30%; /* Set a width for each chart to fit three in one row */
+    }
   </style>
 </head>
 
@@ -85,13 +94,15 @@
     </div>
     
     <div class="pure-g">
-      <div class="pure-u-1" style="text-align: right;">
-        <h2>Proportion of Deaths by Dementia</h2>
-        <div id="waffle_chart" class="vis-container" style="margin: 0 auto; display: block; text-align: right;"></div>
+      <div class="pure-u-1">
+        <h2>Proportion of Deaths by Gender</h2>
+        <div class="waffle-charts-container">
+          <div id="waffle_chart" class="waffle-chart"></div>
+          <div id="waffle_chart2" class="waffle-chart"></div>
+          <div id="waffle_chart3" class="waffle-chart"></div>
+        </div>
       </div>
     </div>
-    
-    
 
     <div class="pure-g">
       <div class="pure-u-1">
@@ -143,6 +154,15 @@
       // Access the Vega view instance as result.view
     }).catch(console.error);
 
+    var specVis7 = "js/waffle_chart2.json";
+    vegaEmbed('#waffle_chart2', specVis7).then(function (result) {
+      // Access the Vega view instance as result.view
+    }).catch(console.error);
+
+    var specVis8 = "js/waffle_chart3.json";
+    vegaEmbed('#waffle_chart3', specVis8).then(function (result) {
+      // Access the Vega view instance as result.view
+    }).catch(console.error);
   </script>
 </body>
 

@@ -1,0 +1,32 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "config": {"view": {"stroke": ""}},
+    "width": 300,
+    "height": 250,
+    "background": "#F5E9D9",
+    "data": {
+      "url": "https://raw.githubusercontent.com/selsasony/3179/refs/heads/main/data/waffle_chart2.csv"
+    },
+    "transform": [
+    {"calculate": "datum.ID % 3", "as": "col"},
+    {"calculate": "floor((datum.ID - 1) / 3)", "as": "row"}
+    ],
+    "mark": {"type": "circle", "filled": true},
+    "encoding": {
+        "x": {"field": "col", "type": "ordinal", "axis": null},
+        "y": {"field": "row", "type": "ordinal", "axis": null},
+        "color": {
+        "field": "Deaths",
+        "scale": {
+            "domain": ["Female", "Male"],
+            "range": ["#D7A6B9", "#A4B6C1"]
+        },
+        "legend": null
+      },
+      "size": {"value": 5000},
+      "tooltip": [
+      {"field": "Cause", "title": "Cause of Death"},
+      {"field": "Deaths", "title": "Gender"}
+    ]
+    }
+}
