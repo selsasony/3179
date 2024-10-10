@@ -8,8 +8,8 @@
       "url": "https://raw.githubusercontent.com/selsasony/3179/refs/heads/main/data/waffle_chart2.csv"
     },
     "transform": [
-    {"calculate": "datum.ID % 3", "as": "col"},
-    {"calculate": "floor((datum.ID - 1) / 3)", "as": "row"}
+    {"calculate": "(datum.ID - 1) % 3", "as": "col"},  
+    {"calculate": "floor((datum.ID - 1) / 3)", "as": "row"}  
     ],
     "mark": {"type": "circle", "filled": true},
     "encoding": {
@@ -18,8 +18,8 @@
         "color": {
         "field": "Deaths",
         "scale": {
-            "domain": ["Female", "Male"],
-            "range": ["#D7A6B9", "#A4B6C1"]
+            "domain": ["Male", "Female"],
+            "range": ["#A4B6C1", "#D7A6B9"]
         },
         "legend": null
       },
