@@ -62,24 +62,8 @@
             {"field": "Year", "type": "ordinal"}
           ]
         }
-      },
-      {
-        "mark": {
-          "type": "text",
-          "align": "left",
-          "baseline": "middle",
-          "text": [
-            "Ischamic heart disease contributes to",
-            "greatest number of deaths over these years"
-          ],
-          "dx": 32,
-          "dy": -275,
-          "fontSize": 11,
-          "fontStyle": "italic",
-          "fontWeight": "normal",
-          "color": "white"
-        }
       }
+  
     ],
     "config": {}
   }
