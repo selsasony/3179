@@ -1,0 +1,85 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "height": 500,
+    "width": 500,
+    "background": "#F5E9D9",
+    "data": {
+      "url": "https://raw.githubusercontent.com/selsasony/3179/refs/heads/main/data/bar_chart_dataset.csv"
+    },
+    "params": [
+      {
+        "name": "Year",
+        "value": 2012,
+        "bind": {
+          "input": "range",
+          "min": 2012,
+          "max": 2022,
+          "step": 1,
+          "name": "Year: "
+        }
+      }
+    ],
+    "transform": [{"filter": "datum.Year == Year"}],
+    "layer": [
+      {
+        "mark": {"type": "bar", "cursor": "pointer"},
+        "encoding": {
+          "x": {
+            "field": "Number of Persons",
+            "type": "quantitative",
+            "title": "Number of Deaths"
+          },
+          "y": {
+            "field": "Causes of Death",
+            "type": "nominal",
+            "title": "Underlying Causes of Deaths",
+            "sort": "-x"
+          },
+          "color": {
+            "field": "Causes of Death",
+            "type": "nominal",
+            "legend": null,
+            "scale": {
+              "domain": [
+                "Diseases of Circulatory System",
+                "Cancer",
+                "Mental and Behavioural Disorders",
+                "Diseases of the Nervous System",
+                "Diseases of the Respiratory System"
+              ],
+              "range": [
+                "#DE8156",
+                "#F2C381",
+                "#F2C381",
+                "#F2C381",
+                "#F2C381"
+              ]
+            }
+          },
+          "tooltip": [
+            {"field": "Causes of Death", "type": "nominal"},
+            {"field": "Number of Persons", "type": "quantitative", "format": ","},
+            {"field": "Year", "type": "ordinal"}
+          ]
+        }
+      },
+      {
+        "mark": {
+          "type": "text",
+          "align": "left",
+          "baseline": "middle",
+          "text": [
+            "Ischamic heart disease contributes to",
+            "greatest number of deaths over these years"
+          ],
+          "dx": 32,
+          "dy": -275,
+          "fontSize": 11,
+          "fontStyle": "italic",
+          "fontWeight": "normal",
+          "color": "white"
+        }
+      }
+    ],
+    "config": {}
+  }

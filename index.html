@@ -83,6 +83,13 @@
     </div>
 
     <div class="pure-g">
+      <div class="pure-u-1">
+        <h2>Deaths Caused by Illness</h2>
+        <div id="bar_chart" class="vis-container"></div>
+      </div>
+    </div>
+
+    <div class="pure-g">
       <div class="pure-u-1" style="text-align: left;">
         <h2>Deaths Caused by Malignant Neoplasms of Digestive Organs (2012-2022)</h2>
         <div id="donut_chart" class="vis-container" style="margin: 0 auto; display: flex; justify-content: center;"></div>
@@ -169,6 +176,11 @@
 
     var specVis8 = "js/waffle_chart3.json";
     vegaEmbed('#waffle_chart3', specVis8).then(function (result) {
+      // Access the Vega view instance as result.view
+    }).catch(console.error);
+
+    var specVis9 = "js/bat_chart.json";
+    vegaEmbed('#bar_chart', specVis9).then(function (result) {
       // Access the Vega view instance as result.view
     }).catch(console.error);
   </script>
