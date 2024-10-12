@@ -1,6 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "width": 780,
+  "width": 760,
   "height": 450,
   "background": "#F5E9D9",
   "title":"Prevalence of Morbidity in Different Age Groups across Australia",
@@ -61,6 +61,10 @@
           "#9D7A6D",
           "#B8B2A1"
         ]
+      },
+      "legend": {
+        "labelFontSize": 13,  
+        "titleFontSize": 13    
       }
     },
     "tooltip": [

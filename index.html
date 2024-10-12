@@ -24,10 +24,11 @@
   <style>
     .text-below-map {
       margin-top: 140px; 
+      margin-bottom: 0px;
     }
 
     .text-next-to-donut {
-      padding-top: 70px; 
+      padding-top: 90px; 
     }
 
     .text-next-to-area {
@@ -63,45 +64,69 @@
               h1 {text-align: center;}
           </style>
           <h1>CAUSES OF DEATHS IN AUSTRALIA</h1>
+          <p style="text-align: left; margin-top: 20px; margin-bottom: 0px;">Australia’s leading causes of death reveal the diverse range of internal and external forces that shape mortality. 
+            Accidents, self-harm, and other non-natural causes account for a significant portion of deaths, reflecting both preventable tragedies and systemic societal challenges. 
+            Each death represents not just a statistic, but a life impacted by these broader forces.</p>
         </div>
       </div>
     </div>
 
     <div class="pure-g">
       <div class="pure-u-1" style="text-align: center;">
-        <h2>The Geography of Mortality</h2>
-        <div id="state_death_map" class="vis-container" style="margin: 0 auto; display: block; text-align: center;"></div>
-        <p class="text-below-map" style="text-align: center;">The map highlights the number of deaths across Australian states in 2022. The states with darker shades represent higher mortality rates, reflecting differences in population and healthcare challenges.</p>
+          <h2>The Geography of Mortality</h2>
+          <div id="state_death_map" class="vis-container" style="margin: 0 auto; display: block; text-align: center; position: relative;"></div>
+          <div class="overlay">
+              <div class="arrow"></div>
+              <div class="annotation-text">New South Wales had the highest death toll in Australia in 2022. 
+                The majority of these deaths were attributed to internal factors such as heart disease and chronic illnesses.</div>
+          </div>
       </div>
-    </div>    
+      
+      <div class="pure-u-1" style="position: relative; z-index: 10; background-color: rgba(245, 233, 217, 1); padding: 10px; border-radius: 8px; margin-top: -20px; margin-right: 500px;">
+          <p style="text-align: left;">The map highlights the number of deaths across Australian states in 2022. 
+            The states with darker shades represent higher mortality rates, reflecting differences in population and healthcare challenges. These numbers reflect not just individual stories but also underscore the importance of continued efforts to enhance 
+            public health and support those in need.</p>
+      </div>
+    </div>
 
-    <div class="pure-g">
+    <div class="pure-g" style="position: relative;">
       <div class="pure-u-1" style="text-align: center;">
         <h2>The External Forces behind Life and Death</h2>
       </div>
-    </div>
-    <div class="pure-g">
-      <div class="pure-u-1" style="text-align: left;">
-        <div id="multiple_series_line_chart" class="vis-container" style="margin-left: 0; display: block;"></div>
+      <div class="pure-u" style="width: 100%; position: relative;">
+        <div id="multiple_series_line_chart" class="vis-container" style="width: 100%; height: 400px;"></div>
+      </div>
+      <div class="pure-u" style="position: absolute; top: 220px; left: 550px; z-index: 10; background-color: rgba(245, 233, 217, 1); padding: 20px; border-radius: 8px;">
+        <p style="text-align: left;; margin-bottom: 0px;">
+          From the bustling highways to the quiet suburban streets, the roads have claimed 
+          the lives of thousands in transport accidents year after year. But the most common, and perhaps the least expected, source of loss is falls—particularly affecting the elderly, highlighting the vulnerabilities that come with aging. As the years progress, 
+          the increase in fall-related deaths becomes a stark reminder of the growing needs of an aging population and the importance of preventive care. Drowning, while smaller in numbers, 
+          continues to be an ever-present danger, especially in a country where water is central to lifestyle and leisure. Each summer brings new risks, particularly to those unprepared for the power of nature’s waters.
+        </p>
       </div>
     </div>
+
+    <div class="pure-g" style="position: relative;">
+      <div class="pure-u-1" style="text-align: center;">
+          <h2 style="margin-top: 20px;">The Hidden Toll of Illness</h2>
+      </div>
+      <div class="pure-u-1" style="display: flex; position: relative;">
+          <div style="flex: 1; padding: 90px 20px 20px;; background-color: rgba(245, 233, 217, 1); border-radius: 8px;">
+              <p style="text-align: left; margin-bottom: 20px;">
+                On the other hand, every year, Australia also faces the profound impact of chronic diseases on its population. Diseases of the circulatory system, such as heart attacks, strokes, and more, claim the highest toll. 
+                Yet the year slider reflects that cancer has always closely followed, growing more deadly than all other diseases as of 2013. 
+                Mental and behavioral disorders have also grown as a significant cause of death, reflecting the ongoing challenges in mental health awareness and treatment.
+              </p>
+          </div>
+          <div id="bar_chart" class="vis-container" style="flex: 1; height: 400px; margin-bottom: 20px;"></div>
+      </div>
+    </div>
+  
     
 
     <div class="pure-g">
       <div class="pure-u-1" style="text-align: center;">
-        <h2 style="margin-top: 50px;">The Hidden Toll of Illness</h2>
-      </div>
-    </div>
-    <div class="pure-g">
-      <div class="pure-u-1" style="text-align: right;">
-        <div id="bar_chart" class="vis-container"></div>
-      </div>
-    </div>
-    
-
-    <div class="pure-g">
-      <div class="pure-u-1" style="text-align: center;">
-        <h2 style="margin-top: 50px;">A Closer Look at Digestive Cancers</h2>
+        <h2 style="margin-top: 70px;">A Closer Look at Digestive Cancers</h2>
       </div>
     </div>
     <div class="pure-g">
@@ -109,10 +134,20 @@
         <div id="donut_chart" class="vis-container" style="margin-left: 0; display: block;"></div>
       </div>
     </div>
-    
     <div class="pure-g">
       <div class="pure-u-1">
-        <p class="text-next-to-donut" style="text-align: center;">The donut chart breaks down the number of deaths caused by various forms of malignant neoplasms in the digestive organs from 2012 to 2022. The data is filtered by year and state, providing insights into the deadliest cancers in this category.</p>
+        <p class="text-next-to-donut" style="text-align: left;">
+          Over the past decade in Australia, a troubling trend has emerged, as visualised through the donut chart, 
+          regarding digestive cancers. The data shows a consistent rise in the incidence of these cancers, 
+          with pancreatic cancer maintaining a prominent position among the deadliest. While other cancers, like colon cancer, have fluctuated in prevalence, 
+          the increasing rates of pancreatic and liver cancers highlight a significant shift in the landscape of digestive cancers. Notably, New South Wales has 
+          experienced particularly high rates, indicating a localised concentration of cases. The dataset, filtered by year and state, provides a clearer view of the deadliest cancers within this category.</p>
+      </div>
+    </div>
+    <div class="overlay2">
+      <div class="arrow2"></div>
+      <div class="annotation-text2">
+        Pancreatic cancer is the deadliest digestive cancer in Australia, with rising mortality rates due to late detection and lack of research.
       </div>
     </div>
     
@@ -133,6 +168,13 @@
           <p style="font-weight: bold;">Hypertensive Diseases</p>
         </div>
       </div>
+      <p style="margin-top: 20px; text-align: left;">
+        Placed adjacent to each other, the waffle charts reveal distinct gender patterns in leading causes of mortality. 
+        In the Dementia chart, females significantly outnumber males, highlighting their vulnerability to this condition. 
+        The Heart Disease chart shows a more balanced distribution, with both genders affected similarly, suggesting that heart disease impacts men and women equally. 
+        Conversely, in the Hypertensive Diseases chart, males dominate, reflecting a pattern seen earlier in dementia. Together, these charts highlight the importance of 
+        understanding gender dynamics in health outcomes, encouraging tailored healthcare approaches that address these differences.
+      </p>
     </div>
 
     <div class="pure-g">
@@ -146,8 +188,13 @@
           <div id="stacked_area_chart" class="vis-container"></div>
         </div>
         <div style="width: 50%;">
-          <p class="text-next-to-area">The area chart shows the prevalence of deaths caused by diabetes over the years. 
-            By comparing states and time frames, the chart reveals trends in diabetes-related fatalities and regional disparities in health outcomes.</p>
+          <p class="text-next-to-area">The dataset reveals alarming trends in diabetes-related deaths across Australia from 2012 to 2022. 
+            Non-insulin-dependent diabetes mellitus consistently accounts for the highest fatalities, peaking at 2,891 deaths in 2022, 
+            highlighting its growing prevalence, especially among older Australians. In contrast, insulin-dependent diabetes mellitus shows lower and more stable death counts, 
+            indicating effective management.&nbsp;<br>&nbsp;<br>
+            
+            By using the States Selection filter, it is evident that New South Wales mirrors national trends, with non-insulin-dependent diabetes leading in mortality rates, 
+            increasing from 462 deaths in 2012 to 864 in 2022. Other states also exhibit similar patterns, depicting the fatality of diabetes.</p>
         </div>
       </div>
     </div>
@@ -156,10 +203,16 @@
     <div class="pure-g">
       <div class="pure-u-1" style="text-align: center;">
         <h2> Morbidity Across Generations in Aging Australia </h2>
-        <div id="stacked_bar_hover" class="vis-container"></div>
+        <div id="stacked_bar" class="vis-container"></div>
+        <p style="margin-top: 20px; text-align: left;">
+          The stacked bar chart reveals significant age-related mortality trends across Australia, highlighting total deaths across various age groups. 
+          In New South Wales, the elderly face the highest toll, with 21,089 deaths among those aged 85-94 in 2022, followed by 16,943 deaths in the 75-84 age group. 
+          Victoria shows similar patterns, with 16,246 deaths in the 85-94 age group and 12,631 in the 75-84 range. Even younger populations are impacted, 
+          as seen in NSW with 327 deaths among 15-24-year-olds. These findings provide a critical perspective on the demographic shifts in mortality, prompting 
+          further exploration into the underlying factors contributing to these trends.</p>
       </div>
     </div>
-  </div>
+    
 
   <script type="text/javascript">
     var specVis1 = "js/external_causes.json";
@@ -167,7 +220,7 @@
     }).catch(console.error);
 
     var specVis2 = "js/stacked_bar_chart.json";
-    vegaEmbed('#stacked_bar_hover', specVis2).then(function (result) {
+    vegaEmbed('#stacked_bar', specVis2).then(function (result) {
     }).catch(console.error);
 
     var specVis3 = "js/donut_chart_states.json";
@@ -198,6 +251,12 @@
     vegaEmbed('#bar_chart', specVis9).then(function (result) {
     }).catch(console.error);
   </script>
+
+<footer style="text-align: center; margin-top: 30px; font-size: 13px; color: #000000;">
+  <p>A visualisation completed by Selsa Sony on 12/10/2024.</p>
+  <p>Data provided by Australian Bureau of Statistics (https://www.abs.gov.au/statistics/health/causes-death/causes-death-australia/2022).</p>
+</footer>
+
 </body>
 
 </html>
